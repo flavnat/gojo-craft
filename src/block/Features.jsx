@@ -1,7 +1,8 @@
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
-import ImageSlider from "../ImageSlider";
-import FeatureCard from "../FeatureCard";
+import ImageSlider from "../components/ImageSlider";
+import FeatureCard from "../components/FeatureCard";
+import { Link } from "react-router";
 
 export default function Features() {
   return (
@@ -17,7 +18,9 @@ export default function Features() {
         </div>
 
         <div>
-          <button className="text-xl border px-2 py-1">view all</button>
+          <Link to={"/product"}>
+            <button className="text-xl border px-2 py-1 cursor-pointer">view all</button>
+          </Link>
         </div>
       </article>
 

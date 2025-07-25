@@ -1,7 +1,7 @@
 import { Funnel } from "lucide-react";
-import NavBar from "../NavBar";
-import ProductCard from "../ProductCard";
-import { Link } from "react-router";
+import NavBar from "../components/NavBar";
+import ProductCard from "../components/ProductCard";
+import FilterDrawer from "../components/FilterDrawer";
 const products = [
   {
     image: "../public/./products/product-3.jpg",
@@ -41,6 +41,7 @@ const products = [
   },
 ];
 export default function ProductsPage() {
+
   return (
     <>
       <NavBar />
@@ -49,31 +50,25 @@ export default function ProductsPage() {
         <div className="flex justify-between mt-10 items-center px-2">
           <h1 className="text-2xl font-semibold uppercase">All Crafts</h1>
 
-          <div>
-            <button className="flex items-center gap-x-2 capitalize">
-              <span>filter</span>
-              <span>
-                <Funnel strokeWidth={1.2} size={20} />
-              </span>
-            </button>
-          </div>
+          {/* filter button */}
+
+          <FilterDrawer />
         </div>
 
         {/* Product Grid */}
 
         <div className="grid grid-cols-4 gap-x-6 gap-y-10 mt-5">
           {products.map((product) => (
-            <Link to={"/product/1"}>
-              <ProductCard
-                image={product.image}
-                name={product.name}
-                description={product.description}
-                price={product.price}
-              />
-            </Link>
+            <ProductCard
+              image={product.image}
+              name={product.name}
+              description={product.description}
+              price={product.price}
+            />
           ))}
         </div>
       </div>
+
     </>
   );
 }

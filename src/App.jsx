@@ -1,6 +1,6 @@
 import NavBar from "./components/NavBar";
-import Features from "./components/block/Features";
-import Hero from "./components/block/Hero";
+import Features from "./block/Features";
+import Hero from "./block/Hero";
 
 function App() {
   return (

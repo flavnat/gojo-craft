@@ -1,10 +1,14 @@
+import { Link } from "react-router";
+
 function ProductCard({ image, description, name, price }) {
   return (
     <div className="space-y-2">
       {/* image */}
+      <Link to={"/product/1"} >
       <div className="overflow-hidden bg-zinc-100 p-5">
         <img src={image} alt={name} className="w-full h-48 object-cover" />
       </div>
+      </Link>
       {/* description */}
       <div className="space-y-1 p-2">
         <p className="text-lg font-semibold">{name}</p>
