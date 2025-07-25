@@ -1,12 +1,52 @@
-# React + Vite
+# Gojo-Craft
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to **Gojo-Craft**, a modern mini e-commerce application built with cutting-edge web technologies for a fast and delightful shopping experience.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
 
-## Expanding the ESLint configuration
+- **[React](https://reactjs.org/)** - A JavaScript library for building user interfaces
+- **[Vite](https://vitejs.dev/)** - Next generation frontend tooling
+- **[Tailwind CSS](https://tailwindcss.com/)** - A utility-first CSS framework
+- **[Yarn](https://yarnpkg.com/)** - Fast, reliable, and secure dependency management
+- **[ESLint](https://eslint.org/)** - Pluggable JavaScript linter
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (version 14 or higher)
+- [Yarn](https://yarnpkg.com/getting-started/install)
+
+
+## Setup Instructions
+
+1. **Clone the repository:**
+   ```bash
+   https://github.com/flavnat/gojo-craft.git
+   cd gojo-craft
+   ```
+2. **Install dependencies:**
+   ```bash
+   yarn install
+   ```
+
+
+3. **Start the development server:**
+   ```bash
+   yarn dev
+   ```
+   The app will open at [http://localhost:5173](http://localhost:5173)
+
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/new-feature`)
+3. Commit your changes (`git commit -m 'Add backlight feature'`)
+4. Push to the branch (`git push origin feature/new-feature`)
+5. Open a Pull Request
+
