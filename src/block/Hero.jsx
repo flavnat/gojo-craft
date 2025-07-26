@@ -1,7 +1,7 @@
 import React from "react";
 function Hero() {
   return (
-    <div className="w-full border max-h-dvh mt-10 grid grid-cols-2 items-center">
+    <div className="w-full max-h-dvh mt-10 grid grid-cols-2 items-center">
       {/* text */}
       <div className="space-y-2 text-center">
         <h1 className="text-6xl font-semibold">
