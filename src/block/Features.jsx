@@ -5,6 +5,9 @@ import FeatureCard from "../components/FeatureCard";
 import { Link } from "react-router";
 
 export default function Features() {
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
   return (
     <div className="mt-10">
       <article className="flex justify-between items-center m-auto">
@@ -18,9 +21,9 @@ export default function Features() {
         </div>
 
         <div>
-          <Link to={"/product"}>
-            <button className="text-xl border px-2 py-1 cursor-pointer">view all</button>
-          </Link>
+          <button className="text-xl border px-2 py-1 cursor-pointer" onClick={scrollToTop}>
+            <Link to={"/product"}>view all</Link>
+          </button>
         </div>
       </article>
 

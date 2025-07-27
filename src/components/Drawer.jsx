@@ -21,7 +21,7 @@ const Drawer = ({
         id="drawer-example"
         className={`fixed top-0 ${
           position === "left" ? "left-0" : "right-0"
-        } z-40 h-screen p-4 overflow-y-auto transition-transform bg-white/55 backdrop-blur-3xl w-80 ${
+        } z-40 h-screen p-4 overflow-y-auto transition-transform bg-white/55 backdrop-blur-3xl w-96 ${
           isOpen
             ? "translate-x-0"
             : `${

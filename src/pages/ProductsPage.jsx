@@ -1,77 +1,126 @@
+import { useState } from "react";
+// import { useSelector } from "react-redux";
 import { Accordion, AccordionItem } from "../components/Accordion";
 import { CheckboxGroup } from "../components/CheckboxGroup";
-import FilterDrawer from "../components/FilterDrawer";
 import NavBar from "../components/NavBar";
 import ProductCard from "../components/ProductCard";
+
 const products = [
   {
+    id: 1,
     image: "../public/./products/product-3.jpg",
     name: "Genuine Leather Shoulder Bag",
     description: "Hand-stitched in Addis Ababa using locally sourced leather.",
-    price: "$960.99",
+    price: 960.99,
+    category: "clothing_textiles",
+    inStock: true,
   },
   {
+    id: 2,
     image: "../public/./products/product-1.avif",
-    name: "Genuine Leather Shoulder Bag",
-    description: "Hand-stitched in Addis Ababa using locally sourced leather.",
-    price: "$960.99",
+    name: "Ethiopian Coffee Beans",
+    description: "Premium organic coffee beans from the highlands of Ethiopia.",
+    price: 24.99,
+    category: "food_beverages",
+    inStock: true,
   },
   {
+    id: 3,
     image: "../public/./products/product-2.avif",
-    name: "Genuine Leather Shoulder Bag",
-    description: "Hand-stitched in Addis Ababa using locally sourced leather.",
-    price: "$960.99",
+    name: "Handwoven Traditional Scarf",
+    description:
+      "Beautifully crafted scarf with traditional Ethiopian patterns.",
+    price: 89.99,
+    category: "clothing_textiles",
+    inStock: false,
   },
   {
+    id: 4,
     image: "../public/./products/product-3.jpg",
-    name: "Genuine Leather Shoulder Bag",
-    description: "Hand-stitched in Addis Ababa using locally sourced leather.",
-    price: "$960.99",
+    name: "Silver Tribal Necklace",
+    description:
+      "Authentic Ethiopian silver jewelry with cultural significance.",
+    price: 156.5,
+    category: "jewelry_accessories",
+    inStock: true,
   },
   {
+    id: 5,
     image: "../public/./products/product-3.jpg",
-    name: "Genuine Leather Shoulder Bag",
-    description: "Hand-stitched in Addis Ababa using locally sourced leather.",
-    price: "$960.99",
+    name: "Handcrafted Wooden Bowl",
+    description: "Traditional wooden bowl carved by Ethiopian artisans.",
+    price: 45.0,
+    category: "woodcraft",
+    inStock: true,
   },
   {
+    id: 6,
     image: "../public/./products/product-3.jpg",
-    name: "Genuine Leather Shoulder Bag",
-    description: "Hand-stitched in Addis Ababa using locally sourced leather.",
-    price: "$960.99",
+    name: "Ceramic Coffee Pot",
+    description:
+      "Traditional Ethiopian coffee pot (jebena) made from local clay.",
+    price: 32.99,
+    category: "pottery",
+    inStock: true,
+  },
+  {
+    id: 7,
+    image: "../public/./products/product-3.jpg",
+    name: "Ethiopian Art Painting",
+    description: "Beautiful landscape painting by local Ethiopian artist.",
+    price: 299.99,
+    category: "paintings_artwork",
+    inStock: true,
+  },
+  {
+    id: 8,
+    image: "../public/./products/product-3.jpg",
+    name: "Handmade Cushion Cover",
+    description: "Colorful cushion cover with traditional Ethiopian designs.",
+    price: 39.99,
+    category: "home_decor",
+    inStock: false,
   },
 ];
+
 export default function ProductsPage() {
+  // const cart = useSelector((state) => state.cart);
+  const [availability, setAvailability] = useState([]);
+  const [categories, setCategories] = useState([]);
+
+  const filteredProducts = products.filter((product) => {
+    const matchesAvailability =
+      availability.length === 0 ||
+      (availability.includes("in_stock") && product.inStock) ||
+      (availability.includes("out_stock") && !product.inStock);
+
+    const matchesCategory =
+      categories.length === 0 || categories.includes(product.category);
+
+    return matchesAvailability && matchesCategory;
+  });
+
   return (
     <>
       <NavBar />
 
       <div className="mt-10">
-        {/* Product Grid */}
-        {/* <div className="flex justify-between mt-10 items-center col-start-2 col-span-4">
-          <h1 className="text-2xl font-semibold uppercase">All Crafts</h1>
-        </div> */}
         <div className="grid grid-cols-5 gap-x-6 gap-y-10 mt-5 items-start">
-          {/* categories */}
-          <div className="">
+          {/* filters */}
+          <div>
             <h1 className="text-2xl font-semibold my-2">Filter</h1>
-            <Accordion>
-              <AccordionItem value={1} trigger={"Avaliablity"}>
+            <Accordion defaultOpenAll={true}>
+              <AccordionItem value={1} trigger={"Availability"}>
                 <CheckboxGroup
-                  // selectedValues={availability}
-                  // dispatch={dispatch}
-                  actionType="SET_AVAILABILITY"
                   options={[
                     { label: "In Stock", value: "in_stock" },
                     { label: "Out of Stock", value: "out_stock" },
                   ]}
+                  onChange={setAvailability}
                 />
               </AccordionItem>
               <AccordionItem value={2} trigger={"Category"}>
                 <CheckboxGroup
-                  // selectedValues={availability}
-                  // dispatch={dispatch}
-                  actionType="SET_CATEGORY"
                   options={[
                     {
                       label: "Clothing & Textiles",
@@ -83,26 +132,34 @@ export default function ProductsPage() {
                     },
                     { label: "Home Decor", value: "home_decor" },
                     { label: "Pottery", value: "pottery" },
-                    { label: "Woodcraft ", value: "woodcraft" },
+                    { label: "Woodcraft", value: "woodcraft" },
                     {
                       label: "Paintings & Artwork",
                       value: "paintings_artwork",
                     },
                   ]}
+                  onChange={setCategories}
                 />
               </AccordionItem>
             </Accordion>
           </div>
-          {/* products */}
+
+          {/* product grid */}
           <div className="grid grid-cols-4 col-span-4 gap-x-6 gap-y-10">
-            {products.map((product) => (
-              <ProductCard
-                image={product.image}
-                name={product.name}
-                description={product.description}
-                price={product.price}
-              />
-            ))}
+            {filteredProducts.length > 0 ? (
+              filteredProducts.map((product) => (
+                <ProductCard
+                  key={product.id}
+                  image={product.image}
+                  name={product.name}
+                  description={product.description}
+                  price={product.price}
+                  product={product}
+                />
+              ))
+            ) : (
+              <p className="text-center col-span-4">No products found.</p>
+            )}
           </div>
         </div>
       </div>

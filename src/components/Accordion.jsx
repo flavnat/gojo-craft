@@ -12,12 +12,24 @@ const AccordionContext = createContext({
   setSelected: () => {},
 });
 
-export function Accordion({ children, value = [], onChange, ...props }) {
+export function Accordion({ children, value = [], onChange, defaultOpenAll = false, ...props }) {
   const [selected, setSelected] = useState(value);
+
+  // Extract child values and set initial state
+  useEffect(() => {
+    if (defaultOpenAll && value.length === 0 && selected.length === 0) {
+      // Get all child values
+      const childValues = React.Children.toArray(children)
+        .map(child => child.props?.value)
+        .filter(Boolean);
+      
+      setSelected(childValues);
+    }
+  }, [children, defaultOpenAll, value, selected]);
 
   useEffect(() => {
     onChange?.(selected);
-  }, [selected]);
+  }, [selected, onChange]);
 
   return (
     <ul {...props}>

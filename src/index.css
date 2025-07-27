@@ -11,6 +11,7 @@
 @layer base {
   html {
     @apply font-spacegrotesk;
+    @apply scroll-smooth;
   }
   body {
     @apply p-6;

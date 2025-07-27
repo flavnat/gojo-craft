@@ -1,4 +1,8 @@
-export function CheckboxGroup({ options, selectedValues = [], dispatch, actionType }) {
+import { useState } from "react";
+
+export function CheckboxGroup({ options = [], onChange }) {
+  const [selectedValues, setSelectedValues] = useState([]);
+
   const toggle = (val) => {
     let updatedValues;
     if (selectedValues.includes(val)) {
@@ -7,10 +11,8 @@ export function CheckboxGroup({ options, selectedValues = [], dispatch, actionTy
       updatedValues = [...selectedValues, val];
     }
 
-    dispatch({
-      type: actionType,
-      payload: updatedValues,
-    });
+    setSelectedValues(updatedValues);
+    if (onChange) onChange(updatedValues); // Optional callback to parent
   };
 
   return (
