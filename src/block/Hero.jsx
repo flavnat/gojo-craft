@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 function Hero() {
   return (
     <div className="relative w-full md:h-[90vh] md:py-0 py-20 overflow-hidden shadow-lg">
@@ -24,11 +25,9 @@ function Hero() {
             artisans and help preserve cultural craftsmanship.
           </h2>
           <button className="bg-white text-black text-lg font-semibold px-8 py-3 rounded-full shadow-md hover:bg-zinc-200 transition-all duration-300">
-            Shop Now
+            <Link to={"/shop"}>Shop Now</Link>
           </button>
         </div>
-
-        {/* Empty for spacing or extra image (optional) */}
         <div className="hidden md:block" />
       </div>
     </div>

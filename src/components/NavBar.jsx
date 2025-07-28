@@ -15,14 +15,14 @@ export default function NavBar() {
 
   return (
     <nav className="flex justify-center w-full py-4">
-      <ul className="flex gap-x-8 uppercase items-center justify-center">
+      <ul className="flex md:gap-x-8 gap-x-5 uppercase items-center justify-center flex-wrap space-y-4">
         {navLinks.map((item) => {
           const isActive = location.pathname === item.link;
           return (
             <li key={item.name}>
               <Link
                 to={item.link}
-                className={`hover:underline transition ${
+                className={`hover:underline md:text-base text-sm  transition ${
                   isActive ? "underline font-semibold" : ""
                 }`}
               >
