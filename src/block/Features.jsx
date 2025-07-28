@@ -9,7 +9,7 @@ export default function Features() {
     window.scrollTo(0, 0);
   };
   return (
-    <div className="mt-10">
+    <div className="my-10">
       <article className="flex justify-between items-center m-auto">
         <div>
           <h2 className="text-2xl uppercase font-semibold">

@@ -16,11 +16,11 @@ function ProductCard({ image, description, name, price, product }) {
   };
 
   return (
-    <div className="flex flex-col shadow-sm rounded-lg overflow-hidden h-full">
+    <div className="flex flex-col shadow-sm rounded-lg overflow-hidden h-full min-h-[340px]">
       {/* image */}
       <Link to={`/shop/${product.slug}`}>
-        <div className="overflow-hidden bg-zinc-100 p-5">
-          <img src={image} alt={name} className="w-full h-40 object-cover" />
+        <div className="aspect-[4/3] bg-zinc-100 overflow-hidden">
+          <img src={image} alt={name} className="w-full h-full object-cover" />
         </div>
       </Link>
 

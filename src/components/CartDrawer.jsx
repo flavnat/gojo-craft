@@ -6,20 +6,22 @@ import Drawer from "./Drawer";
 import { toggleDrawer } from "../features/cart/cartSlice";
 
 function CartDrawer() {
-  const dispatch = useDispatch()
-  const isDrawerOpen = useSelector((state) => state.cart.cartDrawer)
+  const dispatch = useDispatch();
+  const isDrawerOpen = useSelector((state) => state.cart.cartDrawer);
   const cart = useSelector((state) => state.cart);
   const subTotal = useSelector((state) => state.cart.totalAmount);
-  console.log("isDrawerOpen", isDrawerOpen)
+  console.log("isDrawerOpen", isDrawerOpen);
   return (
     <>
       <button
         className="border border-zinc-300 px-2.5 py-1.5 pe-4 relative"
         onClick={() => dispatch(toggleDrawer())}
       >
-        <span className="absolute -top-0 right-0 bg-orange-500 p-0.5 px-1 text-xs text-white">
-          {cart.items?.length || 0}
-        </span>
+        {cart.items?.length ? (
+          <span className="absolute -top-0 right-0 bg-orange-500 p-0.5 px-1 text-xs text-white">
+            {cart.items?.length || 0}
+          </span>
+        ) : null}
         <ShoppingCart strokeWidth={1} />
       </button>
 
@@ -44,7 +46,7 @@ function CartDrawer() {
         )}
 
         {cart.items && cart.items.length > 0 ? (
-          <CartCheckoutCard subTotal={subTotal}/>
+          <CartCheckoutCard subTotal={subTotal} />
         ) : null}
       </Drawer>
     </>

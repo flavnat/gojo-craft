@@ -110,8 +110,6 @@ export default function ShopPage() {
 
   return (
     <>
-      <NavBar />
-
       <div className="mt-10">
         <div className="grid grid-cols-5 gap-x-6 gap-y-10 mt-5 items-start">
           {/* filters */}

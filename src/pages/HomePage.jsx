@@ -1,9 +1,14 @@
-import React from 'react'
+import NavBar from "../components/NavBar";
+import Features from "../block/Features";
+import Hero from "../block/Hero";
 
 function HomePage() {
   return (
-    <div>Home</div>
-  )
+    <>
+      <Hero />
+      <Features />
+    </>
+  );
 }
 
-export default HomePage
+export default HomePage;

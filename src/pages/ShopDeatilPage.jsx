@@ -3,7 +3,7 @@ import NavBar from "../components/NavBar";
 import { Star } from "lucide-react";
 import { useParams } from "react-router";
 import QuantitySelector from "../components/QuantitySelector";
-import { addToCart } from "../features/cart/cartSlice";
+import { addToCart, toggleDrawer } from "../features/cart/cartSlice";
 import { useDispatch } from "react-redux";
 import Breadcrumb from "../components/BreadCrumb";
 
@@ -115,7 +115,6 @@ function ShopDetailPage() {
 
   return (
     <>
-      <NavBar />
       <div className="mt-10 w-[80%] m-auto">
         <Breadcrumb />
         <div className="grid grid-cols-2 gap-x-2 mt-8">
@@ -154,7 +153,7 @@ function ShopDetailPage() {
               <div>
                 <button
                   className="bg-amber-600 text-white px-4 text-lg w-full rounded-3xl py-1"
-                  onClick={handleAddToCart}
+                  onClick={() => { handleAddToCart(); dispatch(toggleDrawer())}}
                 >
                   add to cart
                 </button>
