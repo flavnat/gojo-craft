@@ -4,6 +4,7 @@ const initialState = {
     items: [],        // Array to store cart items
     totalQuantity: 0, // Total number of items
     totalAmount: 0,   // Total cost of all items
+    cartDrawer: false,
 }
 
 export const cartSlice = createSlice({
@@ -68,6 +69,10 @@ export const cartSlice = createSlice({
             state.items = []
             state.totalQuantity = 0
             state.totalAmount = 0
+        },
+
+        toggleDrawer: (state) => {
+            state.cartDrawer = !state.cartDrawer
         }
     },
 })
@@ -78,7 +83,8 @@ export const {
     removeFromCart, 
     increaseQuantity, 
     decreaseQuantity, 
-    clearCart 
+    clearCart,
+    toggleDrawer
 } = cartSlice.actions
 
 // Selector helpers

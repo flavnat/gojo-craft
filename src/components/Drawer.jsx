@@ -40,7 +40,7 @@ const Drawer = ({
         <button
           type="button"
           onClick={onClose}
-          className="text-black bg-transparent text-sm size-8 cursor-pointer absolute top-2.5 end-2.5 flex items-center justify-center hover:border hover:border-zinc-800"
+          className="text-black bg-transparent text-sm size-8 cursor-pointer absolute top-2.5 end-2.5 flex items-center justify-center hover:bg-black hover:text-white duration-200"
         >
           <X />
           <span className="sr-only">Close menu</span>

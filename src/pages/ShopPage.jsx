@@ -1,5 +1,4 @@
 import { useState } from "react";
-// import { useSelector } from "react-redux";
 import { Accordion, AccordionItem } from "../components/Accordion";
 import { CheckboxGroup } from "../components/CheckboxGroup";
 import NavBar from "../components/NavBar";
@@ -8,6 +7,7 @@ import ProductCard from "../components/ProductCard";
 const products = [
   {
     id: 1,
+    slug: "genuine-leather-shoulder-bag",
     image: "../public/./products/product-3.jpg",
     name: "Genuine Leather Shoulder Bag",
     description: "Hand-stitched in Addis Ababa using locally sourced leather.",
@@ -17,6 +17,7 @@ const products = [
   },
   {
     id: 2,
+    slug: "ethiopian-coffee-beans",
     image: "../public/./products/product-1.avif",
     name: "Ethiopian Coffee Beans",
     description: "Premium organic coffee beans from the highlands of Ethiopia.",
@@ -26,6 +27,7 @@ const products = [
   },
   {
     id: 3,
+    slug: "handwoven-traditional-scarf",
     image: "../public/./products/product-2.avif",
     name: "Handwoven Traditional Scarf",
     description:
@@ -36,6 +38,7 @@ const products = [
   },
   {
     id: 4,
+    slug: "silver-tribal-necklace",
     image: "../public/./products/product-3.jpg",
     name: "Silver Tribal Necklace",
     description:
@@ -46,6 +49,7 @@ const products = [
   },
   {
     id: 5,
+    slug: "handcrafted-wooden-bowl",
     image: "../public/./products/product-3.jpg",
     name: "Handcrafted Wooden Bowl",
     description: "Traditional wooden bowl carved by Ethiopian artisans.",
@@ -55,6 +59,7 @@ const products = [
   },
   {
     id: 6,
+    slug: "ceramic-coffee-pot",
     image: "../public/./products/product-3.jpg",
     name: "Ceramic Coffee Pot",
     description:
@@ -65,6 +70,7 @@ const products = [
   },
   {
     id: 7,
+    slug: "ethiopian-art-painting",
     image: "../public/./products/product-3.jpg",
     name: "Ethiopian Art Painting",
     description: "Beautiful landscape painting by local Ethiopian artist.",
@@ -74,6 +80,7 @@ const products = [
   },
   {
     id: 8,
+    slug: "handmade-cushion-cover",
     image: "../public/./products/product-3.jpg",
     name: "Handmade Cushion Cover",
     description: "Colorful cushion cover with traditional Ethiopian designs.",
@@ -83,7 +90,8 @@ const products = [
   },
 ];
 
-export default function ProductsPage() {
+
+export default function ShopPage() {
   // const cart = useSelector((state) => state.cart);
   const [availability, setAvailability] = useState([]);
   const [categories, setCategories] = useState([]);

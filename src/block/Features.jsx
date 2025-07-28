@@ -22,7 +22,7 @@ export default function Features() {
 
         <div>
           <button className="text-xl border px-2 py-1 cursor-pointer" onClick={scrollToTop}>
-            <Link to={"/product"}>view all</Link>
+            <Link to={"/shop"}>view all</Link>
           </button>
         </div>
       </article>
