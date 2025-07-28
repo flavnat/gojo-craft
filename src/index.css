@@ -14,7 +14,7 @@
     @apply scroll-smooth;
   }
   body {
-    @apply p-6;
+    /* @apply p-6; */
   }
 }
 

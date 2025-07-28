@@ -3,62 +3,8 @@ import PrevArrow from "./PrevArrow";
 import NextArrow from "./NextArrow";
 import FeatureCard from "./FeatureCard";
 import ProductCard from "./ProductCard";
+import { products } from "../../mock/mockProducts";
 
-
-const products = [
-  {
-    id: 1,
-    slug: "genuine-leather-shoulder-bag",
-    image: "../public/./products/product-3.jpg",
-    name: "Genuine Leather Shoulder Bag",
-    description: "Hand-stitched in Addis Ababa using locally sourced leather.",
-    price: 960.99,
-    category: "clothing_textiles",
-    inStock: true,
-  },
-  {
-    id: 2,
-    slug: "ethiopian-coffee-beans",
-    image: "../public/./products/product-1.avif",
-    name: "Ethiopian Coffee Beans",
-    description: "Premium organic coffee beans from the highlands of Ethiopia.",
-    price: 24.99,
-    category: "food_beverages",
-    inStock: true,
-  },
-  {
-    id: 3,
-    slug: "handwoven-traditional-scarf",
-    image: "../public/./products/product-2.avif",
-    name: "Handwoven Traditional Scarf",
-    description:
-      "Beautifully crafted scarf with traditional Ethiopian patterns.",
-    price: 89.99,
-    category: "clothing_textiles",
-    inStock: false,
-  },
-  {
-    id: 4,
-    slug: "silver-tribal-necklace",
-    image: "../public/./products/product-3.jpg",
-    name: "Silver Tribal Necklace",
-    description:
-      "Authentic Ethiopian silver jewelry with cultural significance.",
-    price: 156.5,
-    category: "jewelry_accessories",
-    inStock: true,
-  },
-  {
-    id: 5,
-    slug: "handcrafted-wooden-bowl",
-    image: "../public/./products/product-3.jpg",
-    name: "Handcrafted Wooden Bowl",
-    description: "Traditional wooden bowl carved by Ethiopian artisans.",
-    price: 45.0,
-    category: "woodcraft",
-    inStock: true,
-  },
-]
 export default function ImageSlider() {
   const settings = {
     dots: false,
@@ -73,8 +19,8 @@ export default function ImageSlider() {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToShow: 2,
+          slidesToScroll: 2,
           infinite: true,
           dots: true,
         },
@@ -82,8 +28,8 @@ export default function ImageSlider() {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToShow: 1,
+          slidesToScroll: 1,
           initialSlide: 2,
         },
       },
@@ -97,11 +43,12 @@ export default function ImageSlider() {
     ],
   };
   return (
-    <div className="w-[90%] m-auto">
-      <div className="my-10">
+    <div className="md:w-[90%] m-auto md:px-0 px-10 md:my-10 my-6">
+      <div className="">
         <Slider {...settings} className="">
-          {products.map((product) => (
+          {products.slice(0, 6).map((product) => (
             <ProductCard
+              key={product.id}
               name={product.name}
               description={product.description}
               price={product.price}
