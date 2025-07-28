@@ -2,7 +2,7 @@ export const products = [
   {
     id: 1,
     slug: "genuine-leather-shoulder-bag",
-    image: "/public/products/product-1.jpg",
+    image: "/products/product-1.jpg",
     name: "Genuine Leather Shoulder Bag",
     description: "Hand-stitched in Addis Ababa using locally sourced leather.",
     price: 960.99,
@@ -12,7 +12,7 @@ export const products = [
   {
     id: 2,
     slug: "ethiopian-coffee-beans",
-    image: "/public/products/product-8.jpg",
+    image: "/products/product-8.jpg",
     name: "Ethiopian Coffee Beans",
     description: "Premium organic coffee beans from the highlands of Ethiopia.",
     price: 24.99,
@@ -22,7 +22,7 @@ export const products = [
   {
     id: 3,
     slug: "handwoven-traditional-scarf",
-    image: "/public/products/product-2.jpg",
+    image: "/products/product-2.jpg",
     name: "Handwoven Traditional Scarf",
     description:
       "Beautifully crafted scarf with traditional Ethiopian patterns.",
@@ -33,7 +33,7 @@ export const products = [
   {
     id: 4,
     slug: "silver-tribal-necklace",
-    image: "/public/products/product-3.jpg",
+    image: "/products/product-3.jpg",
     name: "Silver Tribal Necklace",
     description:
       "Authentic Ethiopian silver jewelry with cultural significance.",
@@ -44,7 +44,7 @@ export const products = [
   {
     id: 5,
     slug: "handcrafted-wooden-bowl",
-    image: "/public/products/product-4.jpg",
+    image: "/products/product-4.jpg",
     name: "Handcrafted Wooden Bowl",
     description: "Traditional wooden bowl carved by Ethiopian artisans.",
     price: 45.0,
@@ -54,7 +54,7 @@ export const products = [
   {
     id: 6,
     slug: "ceramic-coffee-pot",
-    image: "/public/products/product-5.jpg",
+    image: "/products/product-5.jpg",
     name: "Ceramic Coffee Pot",
     description:
       "Traditional Ethiopian coffee pot (jebena) made from local clay.",
@@ -65,7 +65,7 @@ export const products = [
   {
     id: 7,
     slug: "ethiopian-art-painting",
-    image: "/public/products/product-6.jpg",
+    image: "/products/product-6.jpg",
     name: "Ethiopian Art Painting",
     description: "Beautiful landscape painting by local Ethiopian artist.",
     price: 299.99,
@@ -75,7 +75,7 @@ export const products = [
   {
     id: 8,
     slug: "handmade-cushion-cover",
-    image: "/public/products/product-7.jpg",
+    image: "/products/product-7.jpg",
     name: "Handmade Cushion Cover",
     description: "Colorful cushion cover with traditional Ethiopian designs.",
     price: 39.99,
