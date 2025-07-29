@@ -42,7 +42,7 @@ const ContactPage = () => {
             Gojo Craft Solutions PLC <br />
             Bole Sub-City, Woreda 05 <br />
             African Avenue, Olympia Building, 6th Floor <br />
-            P.O. Box 12789 <br />
+            P.O. Box 127897 <br />
             Addis Ababa, Ethiopia
           </address>
         </div>

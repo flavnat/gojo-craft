@@ -46,7 +46,7 @@ const AboutPage = () => {
           <br /><br />
           We provide detailed product descriptions and stories behind each item so you can connect with its origin. Customer satisfaction is top priority: secure payments, timely shipping, and responsive support make shopping with us smooth and worry-free.
           <br /><br />
-          Plus, we actively seek feedback to improve and grow. Your trust fuels our mission to uplift Ethiopian craftsmanship globally. When you shop here, you’re supporting a community, preserving culture, and getting authentic, quality products you can be proud to own.
+          Plus, we actively seek a feedback to improve and grow. Your trust fuels our mission to uplift Ethiopian craftsmanship globally. When you shop here, you’re supporting a community, preserving culture, and getting authentic, quality products you can be proud to own.
         </p>
       </section>
 
