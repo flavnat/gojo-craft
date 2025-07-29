@@ -1,9 +1,12 @@
+// src/App.jsx
 import NavBar from "./components/NavBar";
-import { Route } from "react-router";
+import { Route, Routes } from "react-router";
 import ShopPage from "./pages/ShopPage";
 import ShopDetailPage from "./pages/ShopDeatilPage";
 import HomePage from "./pages/HomePage";
-import { Routes } from "react-router";
+import AboutPage from "./pages/AboutPage";
+import ContactPage from "./pages/ContactPage"; // ✅ import the contact page
+
 function App() {
   return (
     <>
@@ -12,7 +15,8 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/shop" element={<ShopPage />} />
         <Route path="/shop/:slug" element={<ShopDetailPage />} />
-        {/* <Route path='/about' element={<AbouttPage />}/> */}
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/contact" element={<ContactPage />} /> {/* ✅ contact route */}
       </Routes>
     </>
   );
