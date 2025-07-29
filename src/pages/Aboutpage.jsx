@@ -1,7 +1,4 @@
-// src/pages/AboutPage.jsx
-import React from "react";
-
-const AboutPage = () => {
+function AboutPage() {
   return (
     <div className="p-6 max-w-5xl mx-auto text-gray-900 space-y-12">
       <h1 className="text-5xl font-extrabold mb-8 text-center">About Us</h1>

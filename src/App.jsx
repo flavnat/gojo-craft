@@ -5,7 +5,7 @@ import ShopPage from "./pages/ShopPage";
 import ShopDetailPage from "./pages/ShopDeatilPage";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
-import ContactPage from "./pages/ContactPage"; // ✅ import the contact page
+import ContactPage from "./pages/ContactPage";
 
 function App() {
   return (
