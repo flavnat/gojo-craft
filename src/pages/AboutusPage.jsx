@@ -1,6 +1,6 @@
 import React from "react";
 
-function AboutPage() {
+function AboutusPage() {
   return (
     <div className="p-6 max-w-5xl mx-auto text-gray-900 space-y-12">
       <h1 className="text-5xl font-extrabold mb-8 text-center">About Us</h1>
@@ -119,4 +119,4 @@ function AboutPage() {
   );
 }
 
-export default AboutPage;
+export default AboutusPage;
