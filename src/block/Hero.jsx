@@ -6,7 +6,7 @@ function Hero() {
       {/* Background Image */}
       <img
         src="/hero01.jpg"
-        alt="Hero"
+        alt=""
         className="absolute inset-0 w-full h-full object-cover z-0"
       />
 
