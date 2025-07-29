@@ -2,6 +2,7 @@ import { useState } from "react";
 import { products } from "../../mock/mockProducts";
 import { Accordion, AccordionItem } from "../components/Accordion";
 import { CheckboxGroup } from "../components/CheckboxGroup";
+import FilterDrawer from "../components/FilterDrawer";
 import ProductCard from "../components/ProductCard";
 
 export default function ShopPage() {
@@ -28,39 +29,80 @@ export default function ShopPage() {
           {/* filters */}
           <div>
             <h1 className="text-2xl font-medium uppercase my-1">Filter</h1>
-            <Accordion defaultOpenAll={true}>
-              <AccordionItem value={1} trigger={"Availability"}>
-                <CheckboxGroup
-                  options={[
-                    { label: "In Stock", value: "in_stock" },
-                    { label: "Out of Stock", value: "out_stock" },
-                  ]}
-                  onChange={setAvailability}
-                />
-              </AccordionItem>
-              <AccordionItem value={2} trigger={"Category"}>
-                <CheckboxGroup
-                  options={[
-                    {
-                      label: "Clothing & Textiles",
-                      value: "clothing_textiles",
-                    },
-                    {
-                      label: "Jewelry & Accessories",
-                      value: "jewelry_accessories",
-                    },
-                    { label: "Home Decor", value: "home_decor" },
-                    { label: "Pottery", value: "pottery" },
-                    { label: "Woodcraft", value: "woodcraft" },
-                    {
-                      label: "Paintings & Artwork",
-                      value: "paintings_artwork",
-                    },
-                  ]}
-                  onChange={setCategories}
-                />
-              </AccordionItem>
-            </Accordion>
+
+            <div className="md:hidden block">
+              <FilterDrawer>
+                <Accordion>
+                  <AccordionItem value={1} trigger={"Availability"}>
+                    <CheckboxGroup
+                      options={[
+                        { label: "In Stock", value: "in_stock" },
+                        { label: "Out of Stock", value: "out_stock" },
+                      ]}
+                      onChange={setAvailability}
+                    />
+                  </AccordionItem>
+                  <AccordionItem value={2} trigger={"Category"}>
+                    <CheckboxGroup
+                      options={[
+                        {
+                          label: "Clothing & Textiles",
+                          value: "clothing_textiles",
+                        },
+                        {
+                          label: "Jewelry & Accessories",
+                          value: "jewelry_accessories",
+                        },
+                        { label: "Home Decor", value: "home_decor" },
+                        { label: "Pottery", value: "pottery" },
+                        { label: "Woodcraft", value: "woodcraft" },
+                        {
+                          label: "Paintings & Artwork",
+                          value: "paintings_artwork",
+                        },
+                      ]}
+                      onChange={setCategories}
+                    />
+                  </AccordionItem>
+                </Accordion>
+              </FilterDrawer>
+            </div>
+
+            <div className="md:block hidden">
+              <Accordion>
+                <AccordionItem value={1} trigger={"Availability"}>
+                  <CheckboxGroup
+                    options={[
+                      { label: "In Stock", value: "in_stock" },
+                      { label: "Out of Stock", value: "out_stock" },
+                    ]}
+                    onChange={setAvailability}
+                  />
+                </AccordionItem>
+                <AccordionItem value={2} trigger={"Category"}>
+                  <CheckboxGroup
+                    options={[
+                      {
+                        label: "Clothing & Textiles",
+                        value: "clothing_textiles",
+                      },
+                      {
+                        label: "Jewelry & Accessories",
+                        value: "jewelry_accessories",
+                      },
+                      { label: "Home Decor", value: "home_decor" },
+                      { label: "Pottery", value: "pottery" },
+                      { label: "Woodcraft", value: "woodcraft" },
+                      {
+                        label: "Paintings & Artwork",
+                        value: "paintings_artwork",
+                      },
+                    ]}
+                    onChange={setCategories}
+                  />
+                </AccordionItem>
+              </Accordion>
+            </div>
           </div>
 
           {/* product grid */}

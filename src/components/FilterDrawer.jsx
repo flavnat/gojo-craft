@@ -1,20 +1,19 @@
 import React, { useState } from "react";
 import Drawer from "./Drawer";
 import { Funnel } from "lucide-react";
-export default function FilterDrawer() {
+
+export default function FilterDrawer({ children }) {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   return (
     <>
-      <div>
+      <div className="mt-2">
         <button
-          className="flex items-center gap-x-2 capitalize"
+          className="flex items-center px-2 py-1 border gap-x-2 capitalize"
           onClick={() => setIsDrawerOpen(true)}
         >
           <span>filter</span>
-          <span>
-            <Funnel strokeWidth={1.2} size={20} />
-          </span>
+          {/* <Funnel strokeWidth={1.2} size={18} /> */}
         </button>
       </div>
 
@@ -22,13 +21,9 @@ export default function FilterDrawer() {
         isOpen={isDrawerOpen}
         onClose={() => setIsDrawerOpen(false)}
         title="Filter"
-        position="right"
+        position="left"
       >
-          <details className="siz">
-            <summary>Category</summary>
-            <input type="checkbox" name="tag" id="tag" />
-            <label htmlFor="tag">XY</label>
-          </details>
+        {children}
       </Drawer>
     </>
   );

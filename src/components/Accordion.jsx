@@ -1,36 +1,26 @@
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown } from "lucide-react";
 import React, {
   createContext,
   useContext,
   useEffect,
   useRef,
   useState,
-} from 'react';
+} from "react";
 
 const AccordionContext = createContext({
   selected: [],
   setSelected: () => {},
 });
 
-export function Accordion({ children, value = [], onChange, defaultOpenAll = false, ...props }) {
+export function Accordion({ children, value = [], onChange, ...props }) {
   const [selected, setSelected] = useState(value);
 
   useEffect(() => {
-    if (defaultOpenAll && value.length === 0 && selected.length === 0) {
-      const childValues = React.Children.toArray(children)
-        .map(child => child.props?.value)
-        .filter(Boolean);
-      
-      setSelected(childValues);
-    }
-  }, [children, defaultOpenAll, value, selected]);
-
-  useEffect(() => {
     onChange?.(selected);
-  }, [selected, onChange]);
+  }, [selected]);
 
   return (
-    <ul {...props} className='md:block flex md:space-x-0 space-x-10'>
+    <ul {...props} className="">
       <AccordionContext.Provider value={{ selected, setSelected }}>
         {children}
       </AccordionContext.Provider>
@@ -52,7 +42,7 @@ export function AccordionItem({ children, value, trigger, ...props }) {
   };
 
   return (
-    <li {...props}>
+    <li {...props} className="w-full">
       <header
         role="button"
         onClick={toggleItem}
@@ -62,7 +52,7 @@ export function AccordionItem({ children, value, trigger, ...props }) {
         <ChevronDown
           size={16}
           className={`transition-transform duration-300 ${
-            isOpen ? 'rotate-180' : ''
+            isOpen ? "rotate-180" : ""
           }`}
         />
       </header>
